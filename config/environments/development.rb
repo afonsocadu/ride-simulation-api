@@ -68,4 +68,8 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.responders.error_status = :unprocessable_entity
+  config.responders.redirect_status = :see_other
+
 end
