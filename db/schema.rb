@@ -10,22 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_29_091727) do
-
-  create_table "employees", force: :cascade do |t|
-    t.string "user_name"
-    t.integer "project_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_employees_on_project_id"
-  end
-
-  create_table "employees_technologies", id: false, force: :cascade do |t|
-    t.integer "employee_id"
-    t.integer "technology_id"
-    t.index ["employee_id"], name: "index_employees_technologies_on_employee_id"
-    t.index ["technology_id"], name: "index_employees_technologies_on_technology_id"
-  end
+ActiveRecord::Schema.define(version: 2025_03_23_195417) do
 
   create_table "installs", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,23 +24,15 @@ ActiveRecord::Schema.define(version: 2024_08_29_091727) do
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "title"
+  create_table "rides", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "destination"
+    t.string "origin"
+    t.boolean "completed"
+    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "projects_technologies", id: false, force: :cascade do |t|
-    t.integer "project_id"
-    t.integer "technology_id"
-    t.index ["project_id"], name: "index_projects_technologies_on_project_id"
-    t.index ["technology_id"], name: "index_projects_technologies_on_technology_id"
-  end
-
-  create_table "technologies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_rides_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,5 +66,5 @@ ActiveRecord::Schema.define(version: 2024_08_29_091727) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "employees", "projects"
+  add_foreign_key "rides", "users"
 end
