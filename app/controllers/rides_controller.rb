@@ -1,7 +1,11 @@
 class RidesController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
+  # GET /rides
   def index
-    byebug
+    records = Ride.all
+
+    render status: :ok,
+           json: records
   end
 end

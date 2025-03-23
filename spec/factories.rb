@@ -1,23 +1,18 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :technology do
-    sequence(:name) { |n| "Technology-#{n}" }
-  end
+  factory :ride do
+    destination { "Madrid"}
+    origin { "Barcelona"}
+    completed { true }
+    price { 100 }
 
-  factory :project do
-    title { 'Project X' }
-    technologies { [association(:technology)] }
-  end
-
-  factory :employee do
-    user_name { 'Amaral' }
-    technologies { [association(:technology)] }
+    user
   end
 
   factory :user do
-    sequence(:email) { |n| "user#{n}@example.com" }
-    password { '1234' }
-    password_confirmation{ '1234' }
+    sequence(:email) { |n| "user_#{n}@gmail.com" }
+    password { "password" }
+    password_confirmation { "password" }
   end
 end
