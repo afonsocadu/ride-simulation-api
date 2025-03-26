@@ -21,7 +21,6 @@ RSpec.describe RidesController, type: :controller do
       end
     end
 
-
     context 'when there are no rides in the database' do
       it 'returns an empty array' do
         get :index
