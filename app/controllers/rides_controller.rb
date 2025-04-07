@@ -27,6 +27,7 @@ class RidesController < ApplicationController
   end
 
 
+  # Update the status of a ride
   # GET /rides/:id
   def update
     status = params.require("ride")["completed"]

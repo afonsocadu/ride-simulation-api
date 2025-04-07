@@ -6,7 +6,7 @@ RSpec.describe RidesController, type: :controller do
 
   let(:endpoint) { '/rides' }
 
-  describe '#rides' do
+  describe '#index' do
     context 'when there are existing rides in the database' do
       before do
         user = User.last

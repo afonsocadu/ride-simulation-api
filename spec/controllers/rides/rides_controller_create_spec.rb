@@ -1,12 +1,12 @@
-# test/requests/ride/index_spec.rb
+# test/requests/ride/create_spec.rb
 require 'rails_helper'
 
 RSpec.describe RidesController, type: :controller do
   login_user
 
-  let(:endpoint) { '/rides' }
+  let(:endpoint) { '/rides/update_status' }
 
-  describe '#rides' do
+  describe '#create' do
     context 'when all parameters are valid' do
       let(:params) do
         {
@@ -29,7 +29,7 @@ RSpec.describe RidesController, type: :controller do
         expect(JSON.parse(response.body)["user_id"]).to eq(subject.current_user.id)
       end
 
-      #TODO Create a test when the user is not created. Create validations nefore..
+      #TODO Create a test when the user is not created. Create validations before..
     end
   end
 end
