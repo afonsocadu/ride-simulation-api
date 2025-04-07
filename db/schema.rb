@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2025_03_23_195417) do
 
   create_table "rides", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "destination"
-    t.string "origin"
+    t.integer "destinationLatitude"
+    t.integer "destinationLongitude"
+    t.integer "originLatitude"
+    t.integer "originLongitude"
     t.boolean "completed"
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
