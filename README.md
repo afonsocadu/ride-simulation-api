@@ -86,7 +86,7 @@ Include those three headers in all subsequent API requests.
 
 ### Example: Create a Ride
 
-```http
+```bash
 POST /rides
 Headers:
   access-token: <token>
