@@ -4,6 +4,11 @@ Backend API for the Ride Simulation application. Implements user registration/lo
 
 ---
 
+## Demo Video
+
+Watch the [demo video](https://www.youtube.com/shorts/YAybenB7RCQ) to see the Ride Simulation in action.
+---
+
 ## Overview
 
 - **User authentication** (signup, login, password recovery) via Devise Token Auth
@@ -99,3 +104,8 @@ Body (JSON):
     "price": 0
   }
 }
+```
+
+## Ride Simulation Frontend
+
+For the frontend, check out the [Ride Simulation frontend repository](https://github.com/afonsocadu/ride-simulation-fr).
