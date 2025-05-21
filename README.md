@@ -16,6 +16,12 @@ Watch the [demo video](https://www.youtube.com/shorts/YAybenB7RCQ) to see the Ri
 
 ---
 
+## System Design Documentation
+
+The complete system design documentation is available at [docs/system_design_documentation.md](docs/system_design_documentation.md).
+
+---
+
 ## Overview
 
 - **User authentication** (signup, login, password recovery) via Devise Token Auth
